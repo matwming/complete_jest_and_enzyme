@@ -1,15 +1,5 @@
-import React, { Component } from "react";
-import logo from "./logo.svg";
-import "./App.css";
+import React from "react";
 
-class App extends Component {
- render() {
-  return (
-   <div className="App">
-    <h1>sdfs</h1>
-   </div>
-  );
- }
+export default function App() {
+ return <div>hi</div>;
 }
-
-export default App;
