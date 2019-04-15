@@ -1,4 +1,5 @@
 import React from "react";
+import PropTypes from "prop-types";
 /**
 |--------------------------------------------------
 | 
@@ -15,3 +16,7 @@ export default function Congrats(props) {
  }
  return <div>{message}</div>;
 }
+
+Congrats.propTypes = {
+ success: PropTypes.bool.isRequired
+};
