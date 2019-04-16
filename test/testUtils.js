@@ -1,13 +1,16 @@
 import checkPropTypes from "check-prop-types";
-import { createStore } from "redux";
+import { createStore, applyMiddleware } from "redux";
 import { rootReducer } from "../src/store/index";
+import thunk from "redux-thunk";
+
 /**
 |--------------------------------------------------
 | 
 |--------------------------------------------------
 */
 export const storeFactory = initialState => {
- return createStore(rootReducer, initialState);
+ const createStoreWithMiddleware = applyMiddleware(thunk)(createStore);
+ return createStoreWithMiddleware(rootReducer, initialState);
 };
 /**
 |--------------------------------------------------

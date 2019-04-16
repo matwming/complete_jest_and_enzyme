@@ -1,6 +1,6 @@
 import React from "react";
-import GuessedWords from "./GuessedWords";
-import Congrats from "./Congrats";
+import GuessedWords from "./GuessedWords/GuessedWords";
+import Congrats from "./Congrats/Congrats";
 
 export default function App() {
  return (
