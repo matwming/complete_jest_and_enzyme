@@ -1,9 +1,12 @@
 import { getLetterMatchCount } from "../helpers/index";
+import axios from "axios";
 
 export const actionTypes = {
  CORRECT_GUESS: "CORRECT_GUESS",
- GUESS_WORD: "GUESS_WORD"
+ GUESS_WORD: "GUESS_WORD",
+ SET_SECRET_WORD: "SET_SECRET_WORD"
 };
+
 // export function correctGuess() {
 //  return {
 //   type: actionTypes.CORRECT_GUESS
@@ -26,5 +29,16 @@ export const guessWord = guessedWord => {
   if (guessedWord === secretWord) {
    dispatch({ type: actionTypes.CORRECT_GUESS });
   }
+ };
+};
+
+export const getSecretWord = () => {
+ return dispatch => {
+  return axios.get("http://randomword.setgetgo.com/").then(res =>
+   dispatch({
+    type: actionTypes.SET_SECRET_WORD,
+    payload: res.data
+   })
+  );
  };
 };
